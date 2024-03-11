@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaNoteSticky } from "react-icons/fa6";
 import { CgDarkMode } from "react-icons/cg";
-import "./Navbar.css"
+import "./navbar.css"
 
 const Navbar = () => {
 

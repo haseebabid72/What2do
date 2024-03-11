@@ -1,3 +1,20 @@
-div{
-    background-color: black;
+.underline_on_hover:hover{
+    color:var(--third-color);
+}
+.underline_on_hover::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    left: 49%;
+    background-color: var(--body-color);
+    transition: all 300ms ease;
+}
+.underline_on_hover:hover::before{
+    transform: translate(-50%,50%);
+    width: 100%;
+}
+nav{
+    background-color: rgb(10, 95, 175);
 }

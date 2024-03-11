@@ -1,11 +1,12 @@
-import { useState } from 'react'
 import './App.css'
-
+import Navbar from "./components/Navbar"
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
+      <div id='switch_app_color' className="container mx-auto h-screen">
+        <Navbar />
+      </div>
     </>
   )
 }

@@ -1,3 +1,20 @@
+:root{
+    --body-color:#000a1d;
+    --primary-color:black;
+    --secondary-color:#7FEFBD;
+    --third-color:#CBA135;
+}
+.Light_Mode{
+    --body-color:#9fd3fd;
+    --primary-color:white;
+    --secondary-color:blue;
+    --third-color:red;
+}
+/* Changing App color based on Theme */
+#switch_app_color{
+    background-color: var(--body-color)
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

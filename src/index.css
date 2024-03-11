@@ -3,16 +3,19 @@
     --primary-color:black;
     --secondary-color:#7FEFBD;
     --third-color:#CBA135;
+    --body-text: white;
 }
 .Light_Mode{
     --body-color:#9fd3fd;
     --primary-color:white;
     --secondary-color:blue;
     --third-color:red;
+    --body-text: black;
 }
 /* Changing App color based on Theme */
 #switch_app_color{
-    background-color: var(--body-color)
+    background-color: var(--body-color);
+    color: var(--body-text);
 }
 
 @tailwind base;

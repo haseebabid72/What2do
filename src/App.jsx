@@ -7,7 +7,9 @@ function App() {
     <>
       <div id='switch_app_color' className="container mx-auto h-screen">
         <Navbar />
+        <div className="flex content-center p-10">
         <TodoContainer />
+        </div>
       </div>
     </>
   )

@@ -13,8 +13,8 @@ const TodoContainer = () => {
   return (
     <>
       <div className="MainCont border border-white w-11/12 min-h-96 mx-9 p-4">
-        <div className="maininput flex justify-center gap-4">
-          <input type="text" name="Enter Todo" id="todoinput" />
+        <div className="maininput flex justify-center">
+          <input className='Inputtodo' type="text" name="Enter Todo" id="todoinput" />
         </div>
         {todos.map(todo => {
           return (

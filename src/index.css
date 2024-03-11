@@ -4,6 +4,7 @@
     --secondary-color:#7FEFBD;
     --third-color:#CBA135;
     --body-text: white;
+    --theme: dark;
 }
 .Light_Mode{
     --body-color:#9fd3fd;
@@ -11,9 +12,11 @@
     --secondary-color:blue;
     --third-color:red;
     --body-text: black;
+    --theme: light;
 }
 /* Changing App color based on Theme */
 #switch_app_color{
+    color-scheme: var(--theme);
     background-color: var(--body-color);
     color: var(--body-text);
 }

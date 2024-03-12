@@ -5,12 +5,16 @@ function App() {
   
   return (
     <>
+    <div id='switch_app_color' className="">
+
       <div id='switch_app_color' className="container mx-auto h-screen">
         <Navbar />
         <div className="flex content-center p-10">
         <TodoContainer />
         </div>
       </div>
+
+    </div>
     </>
   )
 }

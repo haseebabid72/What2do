@@ -8,6 +8,7 @@ const Navbar = () => {
 
   // Function toggles the Theme between LightMode and DarkMode
   const change_Theme=() => {
+    
     document.body.classList.toggle("Light_Mode")
   };
 

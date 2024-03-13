@@ -29,6 +29,12 @@ const TodoContainer = () => {
     e.target.checked ? addClass.classList.add("line-through"):addClass.classList.remove("line-through");
   }
  
+  const Edit = (e, index) => {
+    let t =  todos.filter(i => i.index === index)
+    setTodo(t[0].Todo)
+    let newTodos = todos.filter((_, i) => i !== index);
+    settodos(newTodos)
+  }
   
   
   return (
@@ -50,7 +56,7 @@ const TodoContainer = () => {
             <div key={index} className="todos flex justify-between md:w-[70%] w-full mt-1 mx-auto hover:bg-teal-600  transition-all bg-[teal] px-2 py-1 rounded-sm">
               <div className='flex items-center gap-2'><input onChange={(e)=>{Complete_Status(e,index)}} type="checkbox" name="" /><span className='line_through'>{todo.Todo}</span></div>
               <div className='flex items-center gap-2'>
-              <button className='bg-red-700 transition-all duration-300 p-1 hover:bg-black'><FaPenNib/></button>
+              <button onClick={(e)=>Edit(e,index)} className='bg-red-700 transition-all duration-300 p-1 hover:bg-black'><FaPenNib/></button>
               <button onClick={()=>{DeleteTodo(index)}} className='bg-red-700 transition-all duration-300 p-1 hover:bg-black'><MdDelete/></button>
               </div>
             </div>

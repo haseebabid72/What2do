@@ -9,34 +9,35 @@ const TodoContainer = () => {
   const [todos, settodos] = useState([]);
   const [Todo, setTodo] = useState("")
 
-  const newtodo = (e) =>{
+  const newtodo = (e) => {
     setTodo(e.target.value)
-    e.target.value.length>5?setisDisabled(false):setisDisabled(true);
+    e.target.value.length > 5 ? setisDisabled(false) : setisDisabled(true);
     return isDisabled;
   }
-  
-  const Adder = () =>{
-    settodos([...todos, {Todo, status: false}])
+
+  const Adder = () => {
+    settodos([...todos, { Todo, status: false }])
     setTodo("");
     setisDisabled(true);
   }
-  const DeleteTodo = (index)=>{
+  const DeleteTodo = (index) => {
     let newTodos = todos.filter((_, i) => i !== index);
     settodos(newTodos)
   }
-  const Complete_Status = (e,index) => {
+  const Complete_Status = (e, index) => {
     let addClass = document.getElementsByClassName("line_through")[index];
-    e.target.checked ? addClass.classList.add("line-through"):addClass.classList.remove("line-through");
+    e.target.checked ? addClass.classList.add("line-through") : addClass.classList.remove("line-through");
   }
- 
-  const Edit = (e, index) => {
-    let t =  todos.filter(i => i.index === index)
-    setTodo(t[0].Todo)
+
+  const Edit = (index) => {
+    console.log(todos[index].Todo);
+    setTodo(todos[index].Todo)
     let newTodos = todos.filter((_, i) => i !== index);
     settodos(newTodos)
+
   }
-  
-  
+
+
   return (
     <>
       <div className="MainCont bg-[#1c2864] rounded-md w-11/12 min-h-96 mx-9 p-2 md:p-4">
@@ -50,18 +51,18 @@ const TodoContainer = () => {
           </div>
         </div>
         <div className="mt-5">
-        {todos.length == 0 && <div className='text-center text-2xl animate-pulse'>No Todos to display</div>}
-        {todos.map((todo, index) => {
-          return (
-            <div key={index} className="todos flex justify-between md:w-[70%] w-full mt-1 mx-auto hover:bg-teal-600  transition-all bg-[teal] px-2 py-1 rounded-sm">
-              <div className='flex items-center gap-2'><input onChange={(e)=>{Complete_Status(e,index)}} type="checkbox" name="" /><span className='line_through'>{todo.Todo}</span></div>
-              <div className='flex items-center gap-2'>
-              <button onClick={(e)=>Edit(e,index)} className='bg-red-700 transition-all duration-300 p-1 hover:bg-black'><FaPenNib/></button>
-              <button onClick={()=>{DeleteTodo(index)}} className='bg-red-700 transition-all duration-300 p-1 hover:bg-black'><MdDelete/></button>
+          {todos.length == 0 && <div className='text-center text-2xl animate-pulse'>No Todos to display</div>}
+          {todos.map((todo, index) => {
+            return (
+              <div key={index} className="todos flex justify-between md:w-[70%] w-full mt-1 mx-auto hover:bg-teal-600  transition-all bg-[teal] px-2 py-1 rounded-sm">
+                <div className='flex items-center gap-2'><input onChange={(e) => { Complete_Status(e, index) }} type="checkbox" name="" /><span className='line_through'>{todo.Todo}</span></div>
+                <div className='flex items-center gap-2'>
+                  <button onClick={() => Edit(index)} className='bg-red-700 transition-all duration-300 p-1 hover:bg-black'><FaPenNib /></button>
+                  <button onClick={() => { DeleteTodo(index) }} className='bg-red-700 transition-all duration-300 p-1 hover:bg-black'><MdDelete /></button>
+                </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          })}
         </div>
       </div>
     </>
